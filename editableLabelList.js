@@ -14,7 +14,7 @@
  */
 
 
-var DynamicLabelList = function(container, options, translations) {
+var DynamicLabelList = function(container, options) {
     container = $(container);
     var THIS = this;
     THIS.count = 0;
@@ -22,8 +22,6 @@ var DynamicLabelList = function(container, options, translations) {
     var mandatorys;
     if (options == undefined)
         options = {};
-
-    var translate = new Translator(translations);
     var Label = function(text, isMandatory) {
         var HTML = $("<div>").addClass("color-light-gray");
 
@@ -123,7 +121,7 @@ var DynamicLabelList = function(container, options, translations) {
     if (!options['hideAdd']) {
         var addLink = $("<a>");
         container.append(addLink);
-        addLink.text(translate("+ Add"));
+        addLink.text("+ Add");
         addLink.attr("href", "#");
         addLink.click(function() {
             add();
